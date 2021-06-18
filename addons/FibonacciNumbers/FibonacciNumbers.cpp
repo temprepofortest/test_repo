@@ -1,12 +1,12 @@
 #include <nan.h>
 
-double firstValue__ = 0;
-double secondValue__ = 1;
+double firstValue = 0;
+double secondValue = 1;
 
 void NextNumber(const Nan::FunctionCallbackInfo<v8::Value>& info) {
-  double temp = firstValue__;
-  firstValue__ = secondValue__;
-  secondValue__ = temp + firstValue__;
+  double temp = firstValue;
+  firstValue = secondValue;
+  secondValue = temp + firstValue;
   info.GetReturnValue().Set(Nan::New(temp));
 }
 
